@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+
+  ::selection {
+    @apply bg-blue-500 text-white;
+  }
+}
+
+@layer components {
+  .prose {
+    @apply text-gray-900 leading-7;
+  }
+  
+  .prose p {
+    @apply mb-4;
+  }
+  
+  .prose h2 {
+    @apply text-2xl font-serif font-medium mt-8 mb-4;
+  }
+  
+  .prose h3 {
+    @apply text-xl font-serif font-medium mt-6 mb-3;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-sm hover:shadow-md transition-all duration-300 ease-in-out transform hover:-translate-y-1;
+  }
+
+  .button-primary {
+    @apply px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 ease-in-out transform hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+  }
+
+  .button-secondary {
+    @apply px-4 py-2 text-gray-600 hover:bg-gray-50 rounded-lg transition-all duration-300 ease-in-out transform hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-offset-2;
+  }
+
+  .input-primary {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg transition-all duration-300 ease-in-out focus:ring-2 focus:ring-blue-500 focus:border-blue-500 focus:outline-none;
+  }
+
+  .sidebar-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-in-out;
+}
